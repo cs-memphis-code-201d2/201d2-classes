@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20210720</title>
+</head>
+<body>
+    <!-- Semantic tags - NAV -->
+    <nav>
+        <a href="google.com">Click for google</a>
+    </nav>
+
+    <h1>Don't Panic!!!</h1>
+    <script>
+        // do a sanity test
+        console.log("sanity test passed!!!!");    
+        
+        // Data types
+        // string
+        let myString = 'I know you are "really" into JavaScript!!!';
+
+        // Number
+        let myNumber = 3.14;
+        let myNumber2 = "3.146666";
+
+        // boolean value (T/F)
+        let isItTrue = true;
+        let isDefFalse = false;
+        
+        // Lets do some checks!
+
+        let age = 24;
+        let age2 = 24;
+        let value = 2112;
+
+        // Expressions
+        let result = ((myNumber === myNumber2 || age === age2) || value === 2112);
+
+        let result2 = (myNumber === myNumber2 && age === age2);
+
+        console.log("The result of the comparison is: " + result);
+
+        // do some conditional logic 
+        if (value === 1990)
+        {
+            console.log("That is indeed a great album by Rush!!!");
+        }
+        else if (age === 36)
+        {
+            console.log("Ok then.... u r 36");
+            if (value > 1000)
+            {
+                console.log("asdfjlaskdjflasdjflkasdj");
+            }
+        }
+        else
+        {
+            console.log("Nothing is true");
+        }
+
+        // Classic For loop
+       for (let index = 0; (index < 10); index = index + 1) 
+       {
+           console.log("Still looping..." + index);
+          
+       }
+
+       console.log("out of the loop");
+
+       // simple while loop
+       let iamNotdone = true;
+       while (iamNotdone)
+       {
+            let response  = prompt("R U Done?"); // user should enter a 'y' or 'n'
+
+            if (response.toUpperCase() === 'Y' || response.toUpperCase() === "YES")
+            {
+                iamNotdone = false;
+            }
+       }
+
+    let testname = prompt("enter a name:");
+    console.log("The name is " + testname);
+    console.log("The name is " + testname.toUpperCase());
+    console.log("The name is " + testname.toLowerCase());
+
+
+    </script>
+</body>
+</html>
