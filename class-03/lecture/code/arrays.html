@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays Practice</title>
+</head>
+<body>
+    <h1>Array Practice</h1>
+    <script>
+        // Basic array
+        let nameList = ["Kevin", "Bob","Albert","Alfred","Troy","Kit"];
+        let ageList = [23,35,55,12,33,12,33];
+
+        // ageList[2];
+        // print it out
+        console.log(nameList);
+
+        // Print the 2nd name in my array
+        console.log("The the 2nd name in the list is " + nameList[1]);
+        console.log("The the 1st name in the list is " + nameList[0]);
+        console.log("The the 3rd number in the list is " + ageList[2]);
+
+        // Combine with loops to process the array
+        // For Loop
+        //for (let i = 0; i < 4; i++)
+        for (let i = 0; i < nameList.length; i++) // variable number of elements
+        {
+            // Print the next element from the array
+            console.log(nameList[i]);
+        }
+
+        // While Loop - Adds names to a list
+        let names = []; // start with an empty array
+        let notDoneEnteringNames = true;
+        while(notDoneEnteringNames)
+        {
+            // enter a name
+            let newNameEntered = prompt("Enter the next name or X to quit...");
+            if (newNameEntered === "X")
+            {
+                notDoneEnteringNames = false;  // finished entering names
+            }
+            else
+            {
+                names.push(newNameEntered); // add new name to the array
+            }
+        }
+        // msg
+        console.log("Done entering names...");       
+        // Print them all out (in reverse order)
+//        for (let i = (names.length-1); i >= 0; i--) // variable number of elements
+        
+        // process list from start to end
+        for (let i = 0; i < names.length ; i++) // variable number of elements
+        {
+            // Print the next element from the array
+            console.log(names[i]);
+        }        
+
+        // done processing
+        console.log("Done listing names...");
+
+    </script>
+</body>
+</html>

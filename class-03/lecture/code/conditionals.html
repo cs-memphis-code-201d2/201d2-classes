@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressions and switch case</title>
+</head>
+<body>
+    <h1>Expressions and switch case</h1>
+    <script>
+        // // define our vars
+        // let x = 100;
+        // let y = "100";
+        // let z = 21;
+
+        // // simple conditionals
+        // if (x ===== y)
+        // {
+        //     console.log("x is equal to y");            
+        // }
+        // else
+        // {
+        //    console.log("x IS NOT equal to y");           
+        // }
+
+        // // a little more advanced version      
+        // if (z >= x)
+        // {
+        //     console.log("z IS greater than or equal to x");
+        // } 
+        
+
+
+
+        // conditional with input
+       
+
+        // ask to guess the secret name
+        let answer = prompt("Guess the secret name?").toUpperCase();
+        let secretName  = "Kevin";
+        // check the answer
+        if (answer === secretName.toUpperCase())
+        {
+            let secretName = "Bob";
+            alert("YES! The the secret name was " + secretName);
+        }
+        else
+        {
+            alert("Sorry that wasnt the secret name :-(");
+        }
+
+        // print a message
+        console.log("Program Finished... and the secret name was " + secretName);
+    </script>
+</body>
+</html>
