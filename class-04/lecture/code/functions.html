@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions Play through</title>
+</head>
+<body>
+    <h1>Funky Functions</h1>
+    <!-- lets do some JS -->
+    <script>
+        // define a useless function
+        function someFunction()
+        {
+            console.log("Called function with no parameters");
+
+        }
+        // function wherewe pass in the data
+        function whatIsTheArea(length,width)
+        {
+            let theArea = length * width;
+            // console.log("The area a length of " + length + " and a width of " + width + " is " + theArea);
+            return theArea;
+        }
+
+        // stock message
+        // console.log("lets'do it!");
+        // someFunction(); // call the function
+
+        // call function with parms
+        console.log(whatIsTheArea(10, 20));
+        alert(whatIsTheArea(100, 200));
+
+
+        console.log("game over man!");
+
+    </script>
+</body>
+</html>
+
+
+

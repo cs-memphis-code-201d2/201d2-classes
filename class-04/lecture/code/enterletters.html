@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <title>Multiple Prompts</title>
+</head>
+<body>
+    <h1>Let's ask for multiple prompts!</h1>
+    <script>
+        let didWeGetInputWeWanted = false;
+
+        // Let's keep asking for an entry until we get the letter 'x' entered and let's handle it as upper or lower case
+        while (!didWeGetInputWeWanted) // the exclamation point means'NOT' so we checking here if didWeGetInputWeWanted is 'false' which it will be when we start out asking questions
+        {
+            // ask user to enter something specific b4 proceeding. 'x' in this case
+            let userInput = prompt("Please enter the letter 'X'");
+            if (userInput.toUpperCase() != 'X') // we forced to uppercase so we need to check against uppercase value
+            {
+                alert("yo. I asked for the letter 'X'. Try again...")
+            }
+            else
+            {
+                alert("Thanks for the 'X'. Let's move on...")
+                didWeGetInputWeWanted = true; // Toggle valid entry flag so we exit the loop
+            }
+        }
+
+        // Let's keep asking for an entry until we get the letter 'y' entered and let's handle it as upper or lower case
+        didWeGetInputWeWanted = false; // first let's reset our valid entry flag because we need it to know when to move on
+
+        while (!didWeGetInputWeWanted) // the exclamation point means'NOT' so we checking here if didWeGetInputWeWanted is 'false' which it will be when we start out asking questions
+        {
+            // ask user to enter something specific b4 proceeding. 'y' in this case
+            let userInput = prompt("Please enter the letter 'Y'");
+            if (userInput.toUpperCase() != 'Y') // we forced to uppercase so we need to check against uppercase value
+            {
+                alert("yo. I asked for the letter 'Y'. Try again...")
+            }
+            else
+            {
+                alert("Thanks for the 'Y'. Let's move on...")
+                didWeGetInputWeWanted = true; // Toggle valid entry flag so we exit the loop
+            }
+        }        
+
+        // Let's keep asking for an entry until we get the letter 'z' entered and let's handle it as upper or lower case
+        didWeGetInputWeWanted = false; // first let's reset our valid entry flag because we need it to know when to move on
+
+        while (!didWeGetInputWeWanted) // the exclamation point means'NOT' so we checking here if didWeGetInputWeWanted is 'false' which it will be when we start out asking questions
+        {
+            // ask user to enter something specific b4 proceeding. 'z' in this case
+            let userInput = prompt("Please enter the letter 'Z'");
+            if (userInput.toUpperCase() != 'Z') // we forced to uppercase so we need to check against uppercase value
+            {
+                alert("yo. I asked for the letter 'Z'. Try again...")
+            }
+            else
+            {
+                alert("Thanks for the 'Z'. Let's move on...")
+                didWeGetInputWeWanted = true; // Toggle valid entry flag so we exit the loop
+            }
+        }               
+
+        // Now we done
+        alert("Thanks for entering X, Y, and Z like I wanted!")
+        console.log("Game Over Man..."); // debug message so we know all the code ran
+    </script>
+</body>
+</html>
