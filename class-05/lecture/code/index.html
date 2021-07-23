@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Yard Sale Tracker</title>
+</head>
+<body>
+    <script>
+        // Greet the user
+        alert("Thanks for listing your Yard Sale with us! Please enter each item you have fopr sale one at a time. When you have finished entering all items, please enter 'done' to quit.");
+        
+        // Prompt for all items until the user has entered everything they have for sale
+        let userNotDoneEnteringItems = true; // i will use this flag to signal when the user done entering stuff
+        
+        // I need an array/list to hold all the items for sale
+        let yardSaleItemList = [];
+
+        let itemCount = 1; // lets track the number of items
+
+        // Ask them to enter items
+        while (userNotDoneEnteringItems)
+        {
+            let nextItemOrExitString = prompt("Please enter item number " + itemCount);
+            if (nextItemOrExitString.toUpperCase() === "DONE")            
+            {
+                userNotDoneEnteringItems = false; // because they are done entering items
+            }
+            else
+            {
+                yardSaleItemList.push(nextItemOrExitString); // let's add the for sale item to our list
+                itemCount++ ; 
+            }
+        }
+
+        // The user must have finished entering the items so let's list them
+        console.log("Here are the items you entered:");
+
+        for (let itemIndex = 0; itemIndex < yardSaleItemList.length; itemIndex++)
+        {
+            console.log("Item " + itemIndex + ":" + yardSaleItemList[itemIndex]);
+        }
+
+        // Done listing items
+        console.log("Thank you for entering your yard sale items!!!!");
+    </script>
+</body>
+</html>
