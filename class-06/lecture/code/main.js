@@ -49,14 +49,67 @@ const person =
         }
 } 
 
-// dot notation
-console.log("Here is the age of person: " + person.age);
-// call a function
-// console.log(person);
-person.sayHi();
-// log the zip code of my person
-console.log("Zip: " + person.address.zip);
-console.log(person.name.middle);
+// // dot notation
+// console.log("Here is the age of person: " + person.age);
+// // call a function
+// // console.log(person);
+// person.sayHi();
+// // log the zip code of my person
+// console.log("Zip: " + person.address.zip);
+// console.log(person.name.middle);
+
+
+let company1 = 
+{
+    name: "Toys Not Us",
+    city: "Memphis",
+    areYouOpen: function() 
+    {        
+        return("No we are not open in "+ this.city +". srry.");
+    }
+}
+
+let company2 = 
+{
+    name: "Crappy Pies",
+    city: "Nashville",
+    areYouOpen: function() 
+    {        
+        return("Yes we are open.");
+    }
+}
+
+let company3 = 
+{
+    name: "Geek Zone",
+    city: "Paducah",
+    areYouOpen: function() 
+    {        
+        return("Yes we are open.");
+    }
+}
+
+// use dot notation for company2
+console.log("Company 1 Name: " + company1.name + " Is it open? " + company1.areYouOpen());
+
+// add them all to an array
+let myCompanyList = [company1, company2, company3];
+
+// loop through company list of city
+console.log("Here's all of the cities for the stores");
+
+// print each city for each company instance
+for (let i = 0; i < myCompanyList.length; i++)
+{
+    console.log(myCompanyList[i].city); // use dot notation to get specific properties (vars) and/or methods (function)
+}
+
+// What is 'this'
+
+
+
+
+
 
 
 
