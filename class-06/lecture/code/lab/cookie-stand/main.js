@@ -5,7 +5,7 @@
 // we need a generic random function customized to our needs. so we can pass in the data we have
 // we need a random number of customers within range of data we were given
 function getRandomNumberOfCustomersGivenARange(minCustomers, maxCustomers) {
-    return (Math.floor(Math.random() * (maxCustomers - minCustomers + 1)) + minCustomers); // if we get 0 we start at mincustomers, otherwise we multiply difference between max and min time 0 or 1 adding 1 because zero based
+    return (Math.floor(Math.random() * (maxCustomers - minCustomers + 1)) + minCustomers); // if we get 0 we start at mincustomers, otherwise we multiply difference between max and min times 0 or 1 adding 1 because zero based
 }
 
 // The hours in the requirements were from... 6am 2 8pm
@@ -13,21 +13,20 @@ function getRandomNumberOfCustomersGivenARange(minCustomers, maxCustomers) {
 // we need to be able to keep up with sales numbers by the hr so we need to have a list of the hours
 const biznessHours = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm"];
 
-// boom
 // Declare and define an object via a literal. make generic at 1st and just for one. if works for one. will work for whatever location we wanna make.
 let someLocation = {
     // Props
     minCustomers: 23, // minimum custs. We didnt set low boundary. 
     maxCustomers: 65, // max custs
     avgCookieSale: 1, // sales
-    // Both of these next 2 arrays should end up the same length as the array for each hr of the day 15
+    // Both of these next 2 arrays should end up the same length as the array for each hr of the day (15)
     customersPerHour: [], // need an array to store all the customer numbers per hour
     cookiesSoldPerHour: [], // same. need an array to sore sold number of cookies per hour
-    totalDailyCookies : 0,
+    totalDailyCookies : 0, // This will keep an ongoing total for this location
     
     // methods
     getCustomersPerHour: function () {
-        //Use our random customer method. in same obj/instance so use 'this'
+        // Use our random customer method. in same obj/instance so use 'this'
         // add each random num of custs to our array where each index aligns with an hour in the day array
         for (let index = 0; index < biznessHours.length; index++) {
             // Add computed average customer value for each hour to our array/list

@@ -1,0 +1,1 @@
+We focused on reviewing/refactoring lab 06 of salmon cookies. Check class-06 directory for sample code.
