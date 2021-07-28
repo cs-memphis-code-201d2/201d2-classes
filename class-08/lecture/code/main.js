@@ -54,7 +54,7 @@ let someLocation = {
         // // debug
         // console.log(`Here's what we got: ${this.cookiesSoldPerHour}`);
     },
-    render() {
+    render() { // This method is just to write on the page by updating the DOM directly
         this.getCookiesSoldPerHour();
         const unorderedList = document.getElementById('seattle');
         for (let i = 0; i < biznessHours.length; i++) {
