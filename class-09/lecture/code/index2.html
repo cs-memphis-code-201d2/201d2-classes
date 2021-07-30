@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Event Handling</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+    <!-- This shows how events will bubble up from child through parent elements
+    If you want to stop this and handle your self use: event. preventDefault() in handler for a form and/or event.stopPropagation() for all other event types -->
+
+    <h1>JS Event Handling</h1>
+
+    <div class="evElement" id="div1">
+        <div class="evElement" id="div2">
+            <p class="evElement" id="p1">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde itaque modi officia provident atque dolor
+                delectus illum assumenda soluta iste molestias dolorum expedita mollitia voluptatem, rem, illo placeat,
+                nesciunt excepturi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde itaque modi officia
+                provident atque dolor delectus illum assumenda soluta iste molestias dolorum expedita mollitia
+                voluptatem, rem, illo placeat, nesciunt excepturi. Lorem ipsum dolor, sit amet consectetur adipisicing
+                elit. Unde itaque modi officia provident atque dolor delectus illum assumenda soluta iste molestias
+                dolorum expedita mollitia voluptatem, rem, illo placeat, nesciunt excepturi.
+            </p>
+            <p class="evElement" id="p2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, veritatis alias asperiores obcaecati ea
+                quod vero fugiat ad sint voluptas accusantium consequuntur incidunt rerum sed placeat officiis atque
+                odio! Corrupti.
+            <p class="evElement" id="p3">
+                <button class="evElement" id="button1">Click This!</button>
+            </p>
+            </p>
+        </div>
+    </div>
+
+    <hr />
+    <hr />
+
+    <!-- This is a quick example of a form in HTML handled by javascript -->
+    <!-- // create a new form with 2 input fields -->
+    <form id="nameForm">
+        <fieldset>
+            <legend>My Cool Form</legend>
+            <label>First Name</label>
+            <input name="fname" type="text" />
+            <label>Last Name</label>
+            <input name="lname" type="text" />
+        </fieldset>
+        <button type="submit">Save data</button>
+        <button type="reset">Clear data</button>
+    </form>
+
+
+    <script src="./main2.js"></script>
+</body>
+
+</html>
