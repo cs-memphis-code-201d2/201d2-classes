@@ -1,2 +1,2 @@
 # 20210729
-Daily Repo
+Example of using a function instead of an object literal

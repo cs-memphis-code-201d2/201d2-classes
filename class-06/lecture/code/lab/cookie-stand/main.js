@@ -54,6 +54,7 @@ let someLocation = {
         // // debug
         // console.log(`Here's what we got: ${this.cookiesSoldPerHour}`);
     },
+    // render will render the elements on the page, here as an unordered list <ul>
     render() {
         this.getCookiesSoldPerHour();
         const unorderedList = document.getElementById('seattle');
