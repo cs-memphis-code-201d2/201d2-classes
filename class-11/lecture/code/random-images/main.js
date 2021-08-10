@@ -39,6 +39,8 @@ const leftGoatImageTag = document.getElementById('left_goat_img');
 const rightGoatImageName = document.getElementById('right_goat_name');
 const rightGoatImageTag = document.getElementById('right_goat_img');
 const goatClickerHeaderElement = document.getElementById('goatClickerHeader');
+// for chart
+const chartAreaDiv= document.getElementById('chartResults');
 
 // Implement a function to pick 2 random goat objects
 let pickNewGoats = function () {
@@ -82,7 +84,7 @@ const handleClickOnGoat = function (evt) {
         rightGoatOnThePage.timesShown++;
 
         // Update click header status and log (+1 because we started at zero)
-        goatClickerHeaderElement.innerText = `Choose Your Goat Wisely: You have clicked on ${totalClicks+1} Goats out of a max of ${MAX_CLICKS_ALLOWED}`;
+        goatClickerHeaderElement.innerText = `Choose Your Goat Wisely: You have clicked on ${totalClicks + 1} Goats out of a max of ${MAX_CLICKS_ALLOWED}`;
         console.log(`Left goat ${leftGoatOnThePage.name} has been shown ${leftGoatOnThePage.timesShown} and the rght goat ${rightGoatOnThePage.name} has been shown ${rightGoatOnThePage.timesShown} so far.`);
 
         // Check which was clicked and update counter
@@ -111,6 +113,7 @@ const handleClickOnGoat = function (evt) {
         goatImageSectionTag.removeEventListener('click', handleClickOnGoat); // housekeeping
         console.log('You picked 5 goats, thanks!');
         alert('You picked 5 goats, thanks!');
+        makeAGoatChart(); // Build a chart representation of Data
 
         // display the clicks to the page
         for (let index = 0; index < allGoatImageObjects.length; index++) {
@@ -120,9 +123,67 @@ const handleClickOnGoat = function (evt) {
             finalScores.appendChild(newLiScore); // Add score
         }
     }
-
 }
+
+// ==================================
+// ChartJs Implementation
+// ==================================
+
+function makeAGoatChart(){
+
+  // Build element
+  let chartTitleEl = document.createElement('h2');
+  chartTitleEl.innerText = "The Results are In!";
+
+  chartAreaDiv.appendChild(chartTitleEl);
+
+    const goatNamesArray = [];
+    const goatLikesArray =[];
+  
+    for(let i = 0; i < allGoatImageObjects.length; i++){
+      const singleGoatName = allGoatImageObjects[i].name;
+      goatNamesArray.push(singleGoatName);
+    }
+  
+    for(let i = 0; i < allGoatImageObjects.length; i++){
+      const singleGoatLikes = allGoatImageObjects[i].clicks;
+      goatLikesArray.push(singleGoatLikes);
+    }
+
+    goatLikesArray.push(25); // set upper limit
+  
+    const ctx = document.getElementById('goatChart').getContext('2d');
+    const goatChart = new Chart(ctx, {
+    // The type of chart we want to create
+      type: 'line',
+  
+      // The data for our dataset
+      data: {
+        labels: goatNamesArray,
+        datasets: [{
+          label: 'Goat Likes',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: goatLikesArray
+        }]
+      },
+  
+      // Configuration options go here
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+  }
+  
 // POE
+
+
 // Set the listener at the divider level that contains both images.
 // Events bubble up!!! ^^^
 goatImageSectionTag.addEventListener('click', handleClickOnGoat);

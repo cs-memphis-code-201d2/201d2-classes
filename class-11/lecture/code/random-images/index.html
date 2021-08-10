@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <title>Goat Clicker</title>
 </head>
 
@@ -15,7 +16,7 @@
     <!-- Use a Bootstrap CSS container class to hold everything -->
     <div class="container">
         <header id="goatHeader">
-            <h1>Goat Clicker</h1>
+            <h1>Goat Clicker !</h1>
         </header>
         <!-- This section is where we will randomly display 2 goat objects at a time -->
         <section id="all_goats">
@@ -35,6 +36,10 @@
                 <h3>Total Goat Tally</h3>
             </ol>
         </aside>
+        <div id="chartResults">
+            <canvas id='goatChart'> </canvas>
+        </div>
+
     </div>
     <!-- Link in our javascript -->
     <script src="./main.js"></script>
