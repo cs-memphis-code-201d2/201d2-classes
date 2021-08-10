@@ -12,27 +12,30 @@
 </head>
 
 <body>
-    <header id="goatHeader">
-        <h1>Goat Clicker</h1>
-    </header>
-    <!-- This section is where we will randomly display 2 goat objects at a time -->
-    <section id="all_goats">
-        <h3>Choose Your Goat Wisely</h3>
-        <div id="left_goat">
-            <img id="left_goat_img" src="" alt="The left goat"/>
-            <p id="left_goat_name"></p>
-        </div>
-        <div id="right_goat">
-            <img id="right_goat_img" src="" alt="The right goat"/>
-            <p id="right_goat_name"></p>
-        </div>
-    </section>
-    <!-- This aside will be used to display the final score of clicks and views -->
-    <aside>
-        <ol id="finalScores">
-            <h3>Total Goat Tally</h3>
-        </ol>
-    </aside>
+    <!-- Use a Bootstrap CSS container class to hold everything -->
+    <div class="container">
+        <header id="goatHeader">
+            <h1>Goat Clicker</h1>
+        </header>
+        <!-- This section is where we will randomly display 2 goat objects at a time -->
+        <section id="all_goats">
+            <h3>Choose Your Goat Wisely</h3>
+            <div id="left_goat">
+                <img id="left_goat_img" src="" alt="The left goat" />
+                <p id="left_goat_name"></p>
+            </div>
+            <div id="right_goat">
+                <img id="right_goat_img" src="" alt="The right goat" />
+                <p id="right_goat_name"></p>
+            </div>
+        </section>
+        <!-- This aside will be used to display the final score of clicks and views -->
+        <aside>
+            <ol id="finalScores">
+                <h3>Total Goat Tally</h3>
+            </ol>
+        </aside>
+    </div>
     <!-- Link in our javascript -->
     <script src="./main.js"></script>
 </body>

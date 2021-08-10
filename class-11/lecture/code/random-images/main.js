@@ -30,21 +30,27 @@ let allGoatImageObjects = [
 ];
 
 // Setup up our element references in the DOM 
-const goatHeader = document.getElementById('goatHeader') ;
-const goatImageSectionTag = document.getElementById('all_goats') ;
-const finalScores = document.getElementById('finalScores') ;
+// These are simply targeted parts of the DOM where we want to dynamically set content
+const goatHeader = document.getElementById('goatHeader');
+const goatImageSectionTag = document.getElementById('all_goats');
+const finalScores = document.getElementById('finalScores');
 const leftGoatImageName = document.getElementById('left_goat_name');
 const leftGoatImageTag = document.getElementById('left_goat_img');
 const rightGoatImageName = document.getElementById('right_goat_name');
 const rightGoatImageTag = document.getElementById('right_goat_img');
 
 // Implement a function to pick 2 random goat objects
-let pickNewGoats = function() {
+let pickNewGoats = function () {
     // randomly pick the left object/goat from our list of goats
     leftGoatIndex = Math.floor(Math.random() * allGoatImageObjects.length); // classic random pattern with a max
     // Pick randomly from the list a goat object for the right
     // TODO: In final version we should check to make sure we dont display the same image 
-    rightGoatIndex = Math.floor(Math.random() * allGoatImageObjects.length); // classic random pattern with a max
+    rightGoatIndex = leftGoatIndex; // Let's start by setting the 2nd image array index equal to the first
+    // Then we can just loop until we get a different index value
+    // TODO Probably a better way to do this but meh...
+    while (rightGoatIndex === leftGoatIndex) {
+        rightGoatIndex = Math.floor(Math.random() * allGoatImageObjects.length); // classic random pattern with a max value
+    }
     // Keep up with the 2 instances of the goat objects that got picked randomly (so we can update view and click counts)
     // Render on page at the targeted sections of the page
     // Update left
@@ -54,7 +60,7 @@ let pickNewGoats = function() {
     rightGoatImageName.innerText = allGoatImageObjects[rightGoatIndex].name;
     rightGoatImageTag.src = allGoatImageObjects[rightGoatIndex].imageSrc;
 
-    
+
     // update the 2 displayed
     leftGoatOnThePage = allGoatImageObjects[leftGoatIndex];
     rightGoatOnThePage = allGoatImageObjects[rightGoatIndex];
