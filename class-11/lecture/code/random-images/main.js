@@ -90,12 +90,12 @@ const handleClickOnGoat = function (evt) {
             //track the goats
 
             if (id === 'left_goat_img') { // clicked on the left image
-                leftGoatOnThePage.clicks++;
+                leftGoatOnThePage.clicks++; // Add to click total
                 console.log(`Left goat ${leftGoatOnThePage.name} has ${leftGoatOnThePage.clicks} so far`);
             }
 
             if (id === 'right_goat_img') { // clicked on the right image
-                rightGoatOnThePage.clicks++;
+                rightGoatOnThePage.clicks++; // Add to click total
                 console.log(`Right goat ${rightGoatOnThePage.name} has ${rightGoatOnThePage.clicks} so far`);
             }
 
@@ -124,9 +124,9 @@ const handleClickOnGoat = function (evt) {
 }
 // POE
 // Set the listener at the divider level that contains both images.
-// Events bubble up!!!
+// Events bubble up!!! ^^^
 goatImageSectionTag.addEventListener('click', handleClickOnGoat);
-pickNewGoats();
+pickNewGoats(); // Start off by setting 2 initial images
 
 
 
