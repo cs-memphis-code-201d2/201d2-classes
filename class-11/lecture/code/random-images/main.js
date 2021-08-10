@@ -38,13 +38,14 @@ const leftGoatImageName = document.getElementById('left_goat_name');
 const leftGoatImageTag = document.getElementById('left_goat_img');
 const rightGoatImageName = document.getElementById('right_goat_name');
 const rightGoatImageTag = document.getElementById('right_goat_img');
+const goatClickerHeaderElement = document.getElementById('goatClickerHeader');
 
 // Implement a function to pick 2 random goat objects
 let pickNewGoats = function () {
     // randomly pick the left object/goat from our list of goats
     leftGoatIndex = Math.floor(Math.random() * allGoatImageObjects.length); // classic random pattern with a max
     // Pick randomly from the list a goat object for the right
-    // TODO: In final version we should check to make sure we dont display the same image 
+    // We should check to make sure we dont display the same image 
     rightGoatIndex = leftGoatIndex; // Let's start by setting the 2nd image array index equal to the first
     // Then we can just loop until we get a different index value
     // TODO Probably a better way to do this but meh...
@@ -80,6 +81,8 @@ const handleClickOnGoat = function (evt) {
         leftGoatOnThePage.timesShown++;
         rightGoatOnThePage.timesShown++;
 
+        // Update click header status and log (+1 because we started at zero)
+        goatClickerHeaderElement.innerText = `Choose Your Goat Wisely: You have clicked on ${totalClicks+1} Goats out of a max of ${MAX_CLICKS_ALLOWED}`;
         console.log(`Left goat ${leftGoatOnThePage.name} has been shown ${leftGoatOnThePage.timesShown} and the rght goat ${rightGoatOnThePage.name} has been shown ${rightGoatOnThePage.timesShown} so far.`);
 
         // Check which was clicked and update counter
