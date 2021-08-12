@@ -4,6 +4,7 @@
 const orderForm = document.getElementById("orderForm");
 const orders = document.getElementById("orders");
 
+// A class to hold the coffee orders
 class Coffee {
   constructor(name, size, milk, isHot, drinkType) {
     this.name = name;
@@ -68,8 +69,9 @@ orderForm.addEventListener("submit", handleSubmit);
 function updateLocalStorage() {
   //console.log("Updating localStorage....");
   const arrayString = JSON.stringify(Coffee.drinks);
-  console.log(`${arrayString}`);
-  // key, value pairs
+  //console.log(`${arrayString}`);
+
+  // Store the stringified array in localstorage having a key of 'drinks'
   localStorage.setItem('drinks', arrayString);
 }
 
@@ -77,7 +79,7 @@ function getLocalStorage() {
   //console.log("Get stored data from the local storage!!");
 
   // retrieve data from local storage
-  const oldData = localStorage.getItem("drinks");
+  const oldData = localStorage.getItem('drinks');
   
   //console.log(`oldData -- ${oldData}`);
   
